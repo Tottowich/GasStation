@@ -1,4 +1,4 @@
-function profit = gasStation(T,n_pumps,buy_price,sell_price,tank_size,customer_rate,pump_que_cap)
+function cash = gasStation(T,n_pumps,gas_profit,tank_size,customer_rate,pump_que_cap)
 % GASSTATION Simulate an arbritary Gas station set up.
 %
 %
@@ -17,7 +17,7 @@ function profit = gasStation(T,n_pumps,buy_price,sell_price,tank_size,customer_r
 %
 % OUTPUT:
 %
-% profit - amount of profit eared by the gas station.
+% cash - amount of money eared by the gas station.
 %
 % MWE:
 % 
@@ -37,16 +37,13 @@ customers = yout.getElement('CustomersOut');
 gas_left = yout.getElement('GasLeft');
 
 gas_over_time = gas_left.Values.Data;
-gas_left_in_tank = gas_over_time(end);
-gas_used= tank_size-gas_left_in_tank;
-plot(gas_over_time,DisplayName="Gas left")
-time_arrivals = customers.Values.Time;
-gas_costs = tank_size*buy_price;
-revenue = gas_used*sell_price;
+gas_used= tank_size-gas_over_time(end);
+%plot(gas_over_time,DisplayName="Gas left")
+%time_arrivals = customers.Values.Time;
+cash = gas_used*gas_profit;
+grid on;
 % Fixed costs.
 
 % Pump prices.
-pump_costs = 100*T*n_pumps;
-
-profit = revenue-(pump_costs+gas_costs);
+pump_costs = 
 end

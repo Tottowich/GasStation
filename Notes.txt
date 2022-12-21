@@ -1,0 +1,7 @@
+https://www.nbcnews.com/business/business-news/economics-gas-station-rcna19516
+% Buisness of gas station 60% go inside!
+% Gas dispenser 750 W, 2250 W peak power.
+% Cost of 1 hour constant pumping =>
+% 750 W => 0.75kWh.
+% $0.166 per kWh, OCT 2022 <=> 1,73 sek/kWh.
+% Total cost of 1 hour constant pumping =>. 2.25kWh*1.73sek/kWh=3.9 sek

@@ -1,5 +1,5 @@
 function [signals] = gasStationSimulation ...
-    (T,n_pumps,tank_size,customer_rate,pump_que_cap)
+    (T,n_pumps,tank_size,customer_rate,pump_que_cap,pump_rate)
 % GASSTATION Simulate an arbritary Gas station set up.
 %
 %
@@ -20,6 +20,8 @@ function [signals] = gasStationSimulation ...
 %
 %   pump_que_cap - (int) Numbers of cars allowed to que per pump.
 %
+%   pump_rate - (float) Number of liters per hour dispenser can pump.
+%
 % OUTPUT:
 %
 %   signals - (struct) interesting signals that are produced by simulation.
@@ -33,13 +35,14 @@ function [signals] = gasStationSimulation ...
 %
 %
 
-load_system("StartBlock.slx") % Load the gas station model.
+%load_system("StartBlock.slx") % Load the gas station model.
 % Set the simulation parameters to provided ones.
 set_param('StartBlock', 'StopTime', num2str(T))
 set_param('StartBlock/GasPumps','n_pumps',num2str(n_pumps));
 set_param('StartBlock/CustomerCreation','mu_customers',num2str(customer_rate));
 set_param('StartBlock/GasPumps','que_cap',num2str(pump_que_cap));
 set_param('StartBlock/GasPumps','tank_size',num2str(tank_size));
+set_param('StartBlock/GasPumps','pump_rate',num2str(pump_rate));
 % Run simulation:
 sim("StartBlock.slx");
 % Retrieve signals.

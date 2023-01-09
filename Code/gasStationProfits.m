@@ -50,5 +50,8 @@ pump_costs = pumping_cost+idle_cost;
 % How much did the station sell.
 revenue = gas_used*sell_price;
 profit = revenue-(pump_costs+gas_costs);
+if ~gas_left_in_tank
+    profit = NaN;
+end
 end
 

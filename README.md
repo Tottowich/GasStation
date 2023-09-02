@@ -1,7 +1,7 @@
 # Stochasic Processes and Simulation
 This is some of the code I wrote for the course Stochastic Processes and Simulation at the Umeå University.
 This course is part of the Master's program in engineering physics.
-I took this course in the autumn of 2022 in my second year of the program along with the main courses of the program.
+I took this course in the autumn of 2022.
 The course was taught by [Konrad Abramowicz](https://www.umu.se/en/staff/konrad-abramowicz/).
 
 This course is focused on the simulation of stochastic processes and the analysis of the results.
